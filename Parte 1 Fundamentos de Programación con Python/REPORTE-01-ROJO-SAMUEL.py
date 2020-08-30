@@ -63,6 +63,8 @@ while 1:
             return val[3], val[1]
         def ordRat(val):
             return val[4]
+        def ordDate(val):
+            return val[3][6:], val[3][3:5], val[3][0:3]
 
         #   Seleccion de analisis a observar
         print("\nPresione el número de la opción que desee observar.")
@@ -89,7 +91,7 @@ while 1:
                 num_sales = len(sales_list)
             for i in range(num_sales):
                 print(
-                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]][1]} --- ID_PROD: {sales_list[i][0]} --- #VENTAS: {sales_list[i][1]} ")
+                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]-1][1]} --- ID_PROD: {sales_list[i][0]} --- #VENTAS: {sales_list[i][1]} ")
             print("--------------------------------------------")
             print("--------------------------------------------")
             print("--------------------------------------------")
@@ -110,7 +112,7 @@ while 1:
 
             for i in range(num_sales):
                 print(
-                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]][1]} --- ID_PROD: {sales_list[i][0]} --- #BUSQUEDAS: {sales_list[i][2]} ")
+                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]-1][1]} --- ID_PROD: {sales_list[i][0]} --- #BUSQUEDAS: {sales_list[i][2]} ")
             print("--------------------------------------------")
             print("--------------------------------------------")
             print("--------------------------------------------")
@@ -136,7 +138,7 @@ while 1:
                 if catTitle != sales_cat[i][3]:
                     print("----------------"+sales_cat[i][3]+"----------------")
                     catTitle = sales_cat[i][3]
-                print(f"{i + 1}: NOMBRE: {lifestore_products[sales_cat[i][0]][1]} --- ID_PROD: {sales_cat[i][0]} --- #VENTAS: {sales_cat[i][1]} ")
+                print(f"{i + 1}: NOMBRE: {lifestore_products[sales_cat[i][0]-1][1]} --- ID_PROD: {sales_cat[i][0]} --- #VENTAS: {sales_cat[i][1]} ")
             print("--------------------------------------------")
             print("--------------------------------------------")
             print("--------------------------------------------")
@@ -157,7 +159,7 @@ while 1:
 
             for i in range(num_sales):
                 print(
-                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]][1]} --- ID_PROD: {sales_list[i][0]} --- #BUSQUEDAS: {sales_list[i][2]} ")
+                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]-1][1]} --- ID_PROD: {sales_list[i][0]} --- #BUSQUEDAS: {sales_list[i][2]} ")
             print("--------------------------------------------")
             print("--------------------------------------------")
             print("--------------------------------------------")
@@ -185,13 +187,13 @@ while 1:
             else:
                 num_sales = len(RateArray)
             for i in range(num_sales):
-                print(f"{i + 1}: NOMBRE: {lifestore_products[RateArray[i][0]][1]} --- ID_PROD: {RateArray[i][0]} --- #RATING: {RateArray[i][4]} ")
+                print(f"{i + 1}: NOMBRE: {lifestore_products[RateArray[i][0]-1][1]} --- ID_PROD: {RateArray[i][0]} --- #RATING: {RateArray[i][4]} ")
             print("********************************************")
             print("********************************************")
             print("********************************************")
             print("********************************************")
             input("Presione enter para continuar")
-            
+
             #   20 Peores reseñas
             RateArray.sort(key=ordRat)  # Ordenar de forma ascendente
             print("********************************************")
@@ -201,7 +203,7 @@ while 1:
             print("********************************************")
             for i in range(num_sales):
                 print(
-                    f"{i + 1}: NOMBRE: {lifestore_products[RateArray[i][0]][1]} --- ID_PROD: {RateArray[i][0]} --- #RATING: {RateArray[i][4]} ")
+                    f"{i + 1}: NOMBRE: {lifestore_products[RateArray[i][0]-1][1]} --- ID_PROD: {RateArray[i][0]} --- #RATING: {RateArray[i][4]} ")
             print("********************************************")
             print("********************************************")
             print("********************************************")
@@ -210,7 +212,38 @@ while 1:
 
         elif option_analisis == 3:
             #   [3] Sugerir una estrategia
-            print(option_analisis)
+            #   Generar un reporte de Ventas
+            lifestore_sales.sort(key=ordDate)
+            year = lifestore_sales[0][3][6:]
+            month = lifestore_sales[0][3][3:5]
+            VentMes = 0
+            IngMes = 0
+            Reporte_Ventas = []
+            for i in range(len(lifestore_sales)):
+                if year != lifestore_sales[i][3][6:] or month != lifestore_sales[i][3][3:5]:
+                    Reporte_Ventas.append([VentMes, IngMes, month, year])
+                    year = lifestore_sales[i][3][6:]
+                    month = lifestore_sales[i][3][3:5]
+                VentMes += 1
+                IngMes += lifestore_products[lifestore_sales[i][1]-1][2]
+
+            #   Imprimir resultados anuales
+            year = Reporte_Ventas[0][3]
+            TotAnual = 0
+            print(Reporte_Ventas)
+            print(f"######## {year} ########")
+            for i in range(len(Reporte_Ventas)):
+                if year != Reporte_Ventas[i][3]:
+                    print(f"Total anual fue: ${TotAnual}")
+                    year = Reporte_Ventas[i][3]
+                    print(f"######## {year} ########")
+                TotAnual += Reporte_Ventas[i][0]
+            print(f"Total anual fue: ${TotAnual}")
+            input()
+
+
+
+
 
 
         #   Revisar otra opcion
