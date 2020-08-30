@@ -53,19 +53,13 @@ while 1:
                 sales_list.append((i, sales[i], searches[i],
                                    lifestore_products[i][3]))  # [id, number of sales, number of searches, category]
 
-
             #   Func p/ Ordenar la lista (aun no se ven funciones, pero es para evitar un for solo para ordenar y poder usar sort)
             def ordVentas(val):
                 return val[1]
-
-
             def ordBusquedas(val):
                 return val[2]
-
-
             def ordCat(val):
                 return val[3], val[1]
-
 
             #   Brindar listado de 50 productos con mayores ventas
             sales_list.sort(key=ordVentas, reverse=True)  # Ordenar por ventas (Descendente)
@@ -91,7 +85,7 @@ while 1:
             sales_list.sort(key=ordBusquedas, reverse=True)  # Ordenar por Busquedas (Descendente)
             print("--------------------------------------------")
             print("--------------------------------------------")
-            print("--- LISTADO DE 100 PRODUCTOS MAS BUSCADOS ---")
+            print("-- LISTADO DE 100 PRODUCTOS MAS BUSCADOS ---")
             print("--------------------------------------------")
             print("--------------------------------------------")
             if len(sales_list) >= 100:  # Revisar tamaño de lista para evitar error en el for
@@ -112,7 +106,7 @@ while 1:
             sales_list.sort(key=ordVentas)  # Ordenar por Ventas (Ascendente)
             print("--------------------------------------------")
             print("--------------------------------------------")
-            print("--- LISTADO DE 50 PRODUCTOS MENOS VENDIDOS ---")
+            print("-- LISTADO DE 50 PRODUCTOS MENOS VENDIDOS --")
             print("--------------------------------------------")
             print("--------------------------------------------")
             if len(sales_list) >= 50:  # Revisar tamaño de lista para evitar error en el for
