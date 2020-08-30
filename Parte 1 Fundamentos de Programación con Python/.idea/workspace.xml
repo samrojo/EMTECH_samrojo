@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2f2e8cb-fbbe-43b9-9680-13ba999c46f3" name="Default Changelist" comment="" />
+    <list default="true" id="a2f2e8cb-fbbe-43b9-9680-13ba999c46f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REPORTE-01-ROJO-SAMUEL.py" beforeDir="false" afterPath="$PROJECT_DIR$/REPORTE-01-ROJO-SAMUEL.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +21,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="JupyterTrust" id="3cd13c36-d7f6-4c3f-8618-72fc82262e59">
-    <option name="files">
-      <option value="Proyecto_LifeStore.ipynb" />
-    </option>
-  </component>
+  <component name="JupyterTrust" id="3cd13c36-d7f6-4c3f-8618-72fc82262e59" />
   <component name="ProjectId" id="1g0qxwVZ0Av6rnCW3G417JYHFF2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -102,6 +102,7 @@
       <workItem from="1598647752877" duration="6128000" />
       <workItem from="1598676353578" duration="12055000" />
       <workItem from="1598757864748" duration="2242000" />
+      <workItem from="1598762026041" duration="5346000" />
     </task>
     <servers />
   </component>
@@ -113,29 +114,53 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1597270629583" />
-    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1598696263953">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1598771999622">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1598696263953" />
-    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1598696263953">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
+    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1598771999622">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1598696263953" />
-    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1598696263952">
+    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
+    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1598771999622">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1598696263952" />
-    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1598696263953">
+    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1598771999622">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1598696263953" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1598769994490">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1598769994490" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1598769994490">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1598769994490" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1598769994489">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1598769994489" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1598769994490">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1598769994490" />
     <state x="277" y="75" key="SettingsEditor" timestamp="1598685687542">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="75" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1598685687542" />
+    <state width="775" height="439" key="XDebugger.FullValuePopup" timestamp="1598767024375">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="775" height="439" key="XDebugger.FullValuePopup/0.0.1536.864@0.0.1536.864" timestamp="1598767024375" />
+    <state x="330" y="168" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598766959643">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="330" y="168" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.864@0.0.1536.864" timestamp="1598766959643" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Parte_1_Fundamentos_de_Programación_con_Python$REPORTE_01_ROJO_SAMUEL__1_.coverage" NAME="REPORTE-01-ROJO-SAMUEL (1) Coverage Results" MODIFIED="1598695646420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parte_1_Fundamentos_de_Programación_con_Python$REPORTE_01_ROJO_SAMUEL__1_.coverage" NAME="REPORTE-01-ROJO-SAMUEL (1) Coverage Results" MODIFIED="1598771999610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parte_1_Fundamentos_de_Programación_con_Python$lifestore_file.coverage" NAME="lifestore-file Coverage Results" MODIFIED="1597262532164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

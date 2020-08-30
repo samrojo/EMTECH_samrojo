@@ -50,7 +50,8 @@ while 1:
             #   Asociar numero de ventas y busquedas a numero de producto
             sales_list = []
             for i in range(max_Prod):
-                sales_list.append((i, sales[i], searches[i]))
+                sales_list.append((i, sales[i], searches[i],
+                                   lifestore_products[i][3]))  # [id, number of sales, number of searches, category]
 
 
             #   Func p/ Ordenar la lista (aun no se ven funciones, pero es para evitar un for solo para ordenar y poder usar sort)
@@ -60,6 +61,10 @@ while 1:
 
             def ordBusquedas(val):
                 return val[2]
+
+
+            def ordCat(val):
+                return val[3], val[1]
 
 
             #   Brindar listado de 50 productos con mayores ventas
@@ -93,6 +98,7 @@ while 1:
                 num_sales = 100
             else:
                 num_sales = len(sales_list)
+
             for i in range(num_sales):
                 print(
                     f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]][1]} --- ID_PROD: {sales_list[i][0]} --- #BUSQUEDAS: {sales_list[i][2]} ")
@@ -103,9 +109,51 @@ while 1:
             input("Presione enter para continuar")
 
             # Categorias
+            sales_list.sort(key=ordVentas)  # Ordenar por Ventas (Ascendente)
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            print("--- LISTADO DE 50 PRODUCTOS MENOS VENDIDOS ---")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            if len(sales_list) >= 50:  # Revisar tamaño de lista para evitar error en el for
+                num_sales = 50
+            else:
+                num_sales = len(sales_list)
+            #   Generar variable de 50 menos vendidos (o los que alcancen)
+            sales_cat = sales_list[:num_sales]
+            sales_cat.sort(key=ordCat)  #   Ordenar por Categoria y por ventas de forma ascendente
+            catTitle = []   #   Variable de apoyo para impresión de separador por categoria
+            for i in range(len(sales_cat)):
+                if catTitle != sales_cat[i][3]:
+                    print("----------------"+sales_cat[i][3]+"----------------")
+                    catTitle = sales_cat[i][3]
+                print(f"{i + 1}: NOMBRE: {lifestore_products[sales_cat[i][0]][1]} --- ID_PROD: {sales_cat[i][0]} --- #VENTAS: {sales_cat[i][1]} ")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            input("Presione enter para continuar")
 
+            #   100 productos con menos búsquedas
+            sales_list.sort(key=ordBusquedas)  # Ordenar por Busquedas (Ascendente)
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            print("- LISTADO DE 100 PRODUCTOS MENOS BUSCADOS --")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            if len(sales_list) >= 100:  # Revisar tamaño de lista para evitar error en el for
+                num_sales = 100
+            else:
+                num_sales = len(sales_list)
 
-
+            for i in range(num_sales):
+                print(
+                    f"{i + 1}: NOMBRE: {lifestore_products[sales_list[i][0]][1]} --- ID_PROD: {sales_list[i][0]} --- #BUSQUEDAS: {sales_list[i][2]} ")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            print("--------------------------------------------")
+            input("Presione enter para continuar")
 
 
         elif option_analisis == 2:
