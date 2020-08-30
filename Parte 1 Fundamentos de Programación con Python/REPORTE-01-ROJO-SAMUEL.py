@@ -31,36 +31,51 @@ while 1:
 
     #   Bucle de sistema de analisis
     while regFlag == 1:
+        #   Generar lista que relacione las ventas, busquedas y productos
+        #   Contar ventas y rating acumulado
+        sales = [0] * max_Prod
+        rating = [0] * max_Prod
+        for i in range(len(lifestore_sales)):
+            sales[lifestore_sales[i][1]] += 1
+            rating[lifestore_sales[i][1]] += lifestore_sales[i][2]
+        #   Contar Busquedas
+        searches = [0] * max_Prod
+        for i in range(len(lifestore_searches)):
+            searches[lifestore_searches[i][1]] += 1
+
+        #   Asociar numero de ventas y busquedas a numero de producto
+        sales_list = []
+        avgRat = None
+        for i in range(max_Prod):
+            if sales[i] != 0:
+                avgRat = rating[i]/sales[i]
+            else:
+                avgRat = 0
+            sales_list.append((i, sales[i], searches[i],
+                               lifestore_products[i][3],
+                               avgRat))  # [id, number of sales, number of searches, category, avg rating]
+        #   Func p/ Ordenar la lista (aun no se ven funciones, pero es para evitar un for solo para ordenar y poder usar sort)
+        def ordVentas(val):
+            return val[1]
+        def ordBusquedas(val):
+            return val[2]
+        def ordCat(val):
+            return val[3], val[1]
+        def ordRat(val):
+            return val[4]
+
         #   Seleccion de analisis a observar
         print("\nPresione el número de la opción que desee observar.")
         print(" [1] Productos más vendidos y productos rezagados\n", "[2] Productos por reseña en el servicio\n",
               "[3] Sugerir una estrategia")
-        option_analisis = int(input("¿Que análisis desea ver?\n"))
+        option_analisis = input("¿Que análisis desea ver?\n")
+        try:
+            option_analisis = int(option_analisis)
+        except:
+            print("Error: Opcion no valida.")
 
         if option_analisis == 1:
             #   [1] Productos más vendidos y productos rezagados
-            #   Contar ventas y busquedas
-            sales = [0] * max_Prod
-            for i in range(len(lifestore_sales)):
-                sales[lifestore_sales[i][1]] += 1
-            searches = [0] * max_Prod
-            for i in range(len(lifestore_searches)):
-                searches[lifestore_searches[i][1]] += 1
-
-            #   Asociar numero de ventas y busquedas a numero de producto
-            sales_list = []
-            for i in range(max_Prod):
-                sales_list.append((i, sales[i], searches[i],
-                                   lifestore_products[i][3]))  # [id, number of sales, number of searches, category]
-
-            #   Func p/ Ordenar la lista (aun no se ven funciones, pero es para evitar un for solo para ordenar y poder usar sort)
-            def ordVentas(val):
-                return val[1]
-            def ordBusquedas(val):
-                return val[2]
-            def ordCat(val):
-                return val[3], val[1]
-
             #   Brindar listado de 50 productos con mayores ventas
             sales_list.sort(key=ordVentas, reverse=True)  # Ordenar por ventas (Descendente)
             print("--------------------------------------------")
@@ -152,19 +167,51 @@ while 1:
 
         elif option_analisis == 2:
             #   [2] Productos por reseña en el servicio
-            print(option_analisis)
+            #   Seleccionar solo los registros con ventas (Productos sin ventas no deben considerarse puesto que no han sido evaluados)
+            RateArray = []
+            for i in range(len(sales_list)):
+                if sales_list[i][4] != 0:
+                    RateArray.append(sales_list[i])
 
-
-
-
+            #   20 Mejores reseñas
+            RateArray.sort(key=ordRat, reverse=True)  #   Ordenar de forma Descendente
+            print("********************************************")
+            print("********************************************")
+            print("*********** 20 MEJORES RESEÑAS *************")
+            print("********************************************")
+            print("********************************************")
+            if len(RateArray) >= 20:  # Revisar tamaño de lista para evitar error en el for
+                num_sales = 20
+            else:
+                num_sales = len(RateArray)
+            for i in range(num_sales):
+                print(f"{i + 1}: NOMBRE: {lifestore_products[RateArray[i][0]][1]} --- ID_PROD: {RateArray[i][0]} --- #RATING: {RateArray[i][4]} ")
+            print("********************************************")
+            print("********************************************")
+            print("********************************************")
+            print("********************************************")
+            input("Presione enter para continuar")
+            
+            #   20 Peores reseñas
+            RateArray.sort(key=ordRat)  # Ordenar de forma ascendente
+            print("********************************************")
+            print("********************************************")
+            print("************ 20 PEORES RESEÑAS *************")
+            print("********************************************")
+            print("********************************************")
+            for i in range(num_sales):
+                print(
+                    f"{i + 1}: NOMBRE: {lifestore_products[RateArray[i][0]][1]} --- ID_PROD: {RateArray[i][0]} --- #RATING: {RateArray[i][4]} ")
+            print("********************************************")
+            print("********************************************")
+            print("********************************************")
+            print("********************************************")
+            input("Presione enter para continuar")
 
         elif option_analisis == 3:
             #   [3] Sugerir una estrategia
             print(option_analisis)
 
-
-        else:
-            print("Opción invalida")
 
         #   Revisar otra opcion
         print("\n\n¿Desea revisar otra opción?")

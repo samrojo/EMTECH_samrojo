@@ -102,7 +102,7 @@
       <workItem from="1598647752877" duration="6128000" />
       <workItem from="1598676353578" duration="12055000" />
       <workItem from="1598757864748" duration="2242000" />
-      <workItem from="1598762026041" duration="5346000" />
+      <workItem from="1598762026041" duration="9956000" />
     </task>
     <servers />
   </component>
@@ -114,22 +114,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1597270629583" />
-    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1598771999622">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1598777390167">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
-    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1598771999622">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1598777390167" />
+    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1598777390167">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
-    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1598771999622">
+    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1598777390167" />
+    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1598777390167">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
-    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1598771999622">
+    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1598777390167" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1598777390167">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1598771999622" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1598777390167" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1598769994490">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -150,6 +150,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="75" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1598685687542" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1598772992107">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1598772992107" />
     <state width="775" height="439" key="XDebugger.FullValuePopup" timestamp="1598767024375">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -160,7 +164,7 @@
     <state x="330" y="168" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.864@0.0.1536.864" timestamp="1598766959643" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Parte_1_Fundamentos_de_Programación_con_Python$REPORTE_01_ROJO_SAMUEL__1_.coverage" NAME="REPORTE-01-ROJO-SAMUEL (1) Coverage Results" MODIFIED="1598771999610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parte_1_Fundamentos_de_Programación_con_Python$REPORTE_01_ROJO_SAMUEL__1_.coverage" NAME="REPORTE-01-ROJO-SAMUEL (1) Coverage Results" MODIFIED="1598777390155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Parte_1_Fundamentos_de_Programación_con_Python$lifestore_file.coverage" NAME="lifestore-file Coverage Results" MODIFIED="1597262532164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
