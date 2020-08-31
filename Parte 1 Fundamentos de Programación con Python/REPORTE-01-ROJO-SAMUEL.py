@@ -216,31 +216,39 @@ while 1:
             lifestore_sales.sort(key=ordDate)
             year = lifestore_sales[0][3][6:]
             month = lifestore_sales[0][3][3:5]
+            day = lifestore_sales[0][3][:2]
             VentMes = 0
             IngMes = 0
+            DiasMes = 0
             Reporte_Ventas = []
             for i in range(len(lifestore_sales)):
+                if day != lifestore_sales[i][3][:2]:
+                    DiasMes += 1
+                    day = lifestore_sales[i][3][:2]
                 if year != lifestore_sales[i][3][6:] or month != lifestore_sales[i][3][3:5]:
-                    Reporte_Ventas.append([VentMes, IngMes, month, year])
+                    Reporte_Ventas.append([VentMes, IngMes, month, year, DiasMes])  # Ventas en el mes, ingreso mensual, mes, año, numero de dias con ventas
+                    VentMes = 0
+                    IngMes = 0
+                    DiasMes = 0
                     year = lifestore_sales[i][3][6:]
                     month = lifestore_sales[i][3][3:5]
+                    day = lifestore_sales[i][3][:2]
                 VentMes += 1
                 IngMes += lifestore_products[lifestore_sales[i][1]-1][2]
-
+            DiasMes += 1
+            Reporte_Ventas.append([VentMes, IngMes, month, year, DiasMes])
             #   Imprimir resultados anuales
             year = Reporte_Ventas[0][3]
             TotAnual = 0
-            print(Reporte_Ventas)
             print(f"######## {year} ########")
             for i in range(len(Reporte_Ventas)):
                 if year != Reporte_Ventas[i][3]:
                     print(f"Total anual fue: ${TotAnual}")
+                    TotAnual = 0
                     year = Reporte_Ventas[i][3]
                     print(f"######## {year} ########")
-                TotAnual += Reporte_Ventas[i][0]
+                TotAnual += Reporte_Ventas[i][1]
             print(f"Total anual fue: ${TotAnual}")
-            input()
-
 
 
 
