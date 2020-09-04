@@ -13,14 +13,10 @@ for i in range(len(lifestore_products)):
 
 #   Bucle principal
 while 1:
-    #   Login
-    # print("Bienvenido, favor de iniciar sesion:\n")
-    # user = input("Usuario: ")
-    # pwd = input('Contraseña: ')
-    print("Credenciales")
-    input("Presiona")
-    user = "Admin"
-    pwd = "1234"
+      # Login
+    print("Bienvenido, favor de iniciar sesion:\n")
+    user = input("Usuario: ")
+    pwd = input('Contraseña: ')
 
     #   Revisar credenciales
     for usr in Registred_users:
