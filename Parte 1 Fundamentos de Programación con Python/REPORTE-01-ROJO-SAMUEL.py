@@ -74,7 +74,7 @@ while 1:
         try:
             option_analisis = int(option_analisis)
         except:
-            print("Error: Opcion no valida.")
+            print("Debe ingresar un número contenido en las opciones")
 
         if option_analisis == 1:
             #   [1] Productos más vendidos y productos rezagados
@@ -237,22 +237,77 @@ while 1:
                 IngMes += lifestore_products[lifestore_sales[i][1]-1][2]
             DiasMes += 1
             Reporte_Ventas.append([VentMes, IngMes, month, year, DiasMes])
-            #   Imprimir resultados anuales
+
+            #   Imprimir anuales anuales
+            print(f"\n########################")
+            print(f"########################")
+            print(f"### Ingresos Totales ###")
+            print(f"########################")
+            print(f"########################\n")
             year = Reporte_Ventas[0][3]
             TotAnual = 0
+            VentAnual = 0
+            Reporte_Anual = []
             print(f"######## {year} ########")
             for i in range(len(Reporte_Ventas)):
                 if year != Reporte_Ventas[i][3]:
                     print(f"Total anual fue: ${TotAnual}")
+                    Reporte_Anual.append((year, TotAnual, VentAnual))
                     TotAnual = 0
+                    VentAnual = 0
                     year = Reporte_Ventas[i][3]
                     print(f"######## {year} ########")
                 TotAnual += Reporte_Ventas[i][1]
+                VentAnual += Reporte_Ventas[i][0]
             print(f"Total anual fue: ${TotAnual}")
+            Reporte_Anual.append((year, TotAnual, VentAnual))
+            input("Preione Enter para continuar")
 
+            #   Ventas, ingresos y ventas promedio mensual
 
+            print(f"\n########################")
+            print(f"########################")
+            print(f"### Reporte Mensual ####")
+            print(f"########################")
+            print(f"########################\n")
+            year = 0
+            for venta in Reporte_Ventas:
+                if year != venta[2]:
+                    print(f"############ {venta[3]} ############")
+                print(f"MES: {venta[2]}. #Ventas: {venta[0]}, #Ingreso mensual: {venta[1]}, Ventas promedio: {venta[0]/30}")
 
+            input("Preione Enter para continuar")
+            #   Total ventas anual
+            print(f"\n########################")
+            print(f"########################")
+            print(f"#### Ventas Totales ####")
+            print(f"########################")
+            print(f"########################\n")
+            for i in range(len(Reporte_Anual)):
+                print(f"En {Reporte_Anual[i][0]} hubo {Reporte_Anual[i][2]} ventas.")
+            input("Preione Enter para continuar")
 
+            #   Meses con mas ventas (top: 3)
+            print(f"\n########################")
+            print(f"########################")
+            print(f"# Meses con mas ventas #")
+            print(f"########################")
+            print(f"########################\n")
+            Reporte_Ventas.sort(key=lambda x: x[0], reverse=True) #   Ordenar por mes de forma Descendente
+            top_ventas = input("Ingrese el numero de meses con mas ventas que desee revisar: ")
+            try:
+                top_ventas = int(top_ventas)
+                if len(Reporte_Ventas) < top_ventas:
+                    top_ventas = len(Reporte_Ventas)
+                print("\nMeses con mas ventas: \n")
+                for i in range(top_ventas):
+                    print(f"El mes {Reporte_Ventas[i][2]}/{Reporte_Ventas[i][3]} tuvo {Reporte_Ventas[i][0]} ventas.")
+                input("Presione Enter para continuar")
+            except:
+                print("\nEntrada no válida, por favor ingrese un número")
+
+        else:
+            print("Opción no valida")
 
         #   Revisar otra opcion
         print("\n\n¿Desea revisar otra opción?")
