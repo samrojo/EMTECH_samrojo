@@ -234,7 +234,7 @@ while 1:
             DiasMes += 1
             Reporte_Ventas.append([VentMes, IngMes, month, year, DiasMes])
 
-            #   Imprimir anuales anuales
+            #   Imprimir ingresos anuales
             print(f"\n########################")
             print(f"########################")
             print(f"### Ingresos Totales ###")
