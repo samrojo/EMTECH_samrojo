@@ -207,7 +207,7 @@ while 1:
             input("Presione enter para continuar")
 
         elif option_analisis == 3:
-            #   [3] Sugerir una estrategia
+            #   [3] Total de ingresos y ventas promedio mensuales, total anual y meses con más ventas al año
             #   Generar un reporte de Ventas
             lifestore_sales.sort(key=ordDate)
             year = lifestore_sales[0][3][6:]
