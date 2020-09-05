@@ -61,6 +61,8 @@ while 1:
             return val[4]
         def ordDate(val):
             return val[3][6:], val[3][3:5], val[3][0:3]
+        def ordMes(val):
+            return val[0]
 
         #   Seleccion de analisis a observar
         print("\nPresione el número de la opción que desee observar.")
@@ -289,7 +291,7 @@ while 1:
             print(f"# Meses con mas ventas #")
             print(f"########################")
             print(f"########################\n")
-            Reporte_Ventas.sort(key=lambda x: x[0], reverse=True) #   Ordenar por mes de forma Descendente
+            Reporte_Ventas.sort(key=ordMes, reverse=True) #   Ordenar por mes de forma Descendente
             top_ventas = input("Ingrese el numero de meses con mas ventas que desee revisar: ")
             try:
                 top_ventas = int(top_ventas)
