@@ -1,8 +1,8 @@
 from lifestore_file import lifestore_products, lifestore_sales, lifestore_searches  # Importar Datos de lifestore_file
 
 #   Declarar usuarios definidos y sus passwords
-Registred_users = [["Admin", "1234"],
-                   ["Admin2", "456"]]
+Registred_users = [("Admin", "1234"),
+                   ("Admin2", "456")]
 #   Declarar variable de ingreso
 regFlag = 0
 #   Definir cantidad maxima de productos
@@ -65,7 +65,7 @@ while 1:
         #   Seleccion de analisis a observar
         print("\nPresione el número de la opción que desee observar.")
         print(" [1] Productos más vendidos y productos rezagados\n", "[2] Productos por reseña en el servicio\n",
-              "[3] Sugerir una estrategia")
+              "[3] Total de ingresos y ventas promedio mensuales,total anual y meses con más ventas al año")
         option_analisis = input("¿Que análisis desea ver?\n")
         try:
             option_analisis = int(option_analisis)
@@ -310,7 +310,7 @@ while 1:
         option_out = input("Ingrese si para revisar otra opción, cualquier otra entrada para salir. ")
         if option_out.lower() != "si" and option_out.lower() != "s":
             print("\n...Cerrando sesión...")
-            regFlag == 0  # "Cierre de sesión"
+            regFlag = 0  # "Cierre de sesión"
             break
 
     #   Usar otro usuario
