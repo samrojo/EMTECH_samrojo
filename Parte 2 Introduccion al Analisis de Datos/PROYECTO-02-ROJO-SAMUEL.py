@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 desired_width = 10
 pd.set_option('display.max_columns', 10)  # Redefinimos el maximo de columnas a mostrar para poder verlas en el editor
@@ -87,7 +89,8 @@ while(1):
 
         Transporte["Ratio"] = Transporte["Valor_acumulado"] / Transporte["Cuenta"]
         print(Transporte)
-
+        sns.catplot(data=Transporte, kind="bar", x="transport_mode", y="Cuenta").set_xticklabels(rotation=45, horizontalalignment='right')
+        plt.show()
     #   Valor total de importaciones y exportaciones
     if selector == 3:
         print("\n#############################################################################")
@@ -122,6 +125,9 @@ while(1):
             i += 1
 
         print(Paises[0:i+1])
+
+        sns.catplot(data=Paises, kind="bar", x="origin", y="Valor_acumulado").set_xticklabels(rotation=20, horizontalalignment='right')
+        plt.show()
 
     #   Solicitud de salida o analisis nuevo
     outvar = input("\n¿Desea realizar otra opcion? (SI/NO)\n")
