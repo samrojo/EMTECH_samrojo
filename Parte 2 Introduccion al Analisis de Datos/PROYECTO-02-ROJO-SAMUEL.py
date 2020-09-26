@@ -55,9 +55,9 @@ while(1):
         a menor por cantidad de viajes y finalmente se asigna un index como referencia visual, por ultimo
         se calculo un ratio del valor acumulado dividido entre viajes en la ruta para conocer su aporte por viaje.
         """
-        #   Cuenta de Exportaciones por ruta
-        print("+++++++++++++++++++++++++++++++ Exportaciones +++++++++++++++++++++++++++++++")
-        Exportaciones = df[(df['direction'] == 'Exports')].groupby(["direction", "origin", "destination"])['total_value']\
+        #   Cuenta de rutas mas utilizadas
+        print("++++++++++++++++++++++++++++++ Rutas mas usadas ++++++++++++++++++++++++++++++")
+        Exportaciones = df.groupby(["direction", "origin", "destination"])['total_value']\
             .agg({'count', 'sum'})\
             .rename(columns={'count': 'Cuenta', 'sum': 'Valor_acumulado'})\
             .sort_values(by=['Cuenta'], ascending=False)\
@@ -65,15 +65,6 @@ while(1):
         Exportaciones["Ratio"] = Exportaciones["Valor_acumulado"]/Exportaciones["Cuenta"]
         print(Exportaciones.head(10))
 
-        #   Cuenta de Importaciones por ruta
-        print("+++++++++++++++++++++++++++++++ Importaciones +++++++++++++++++++++++++++++++")
-        Importaciones = df[(df['direction'] == 'Imports')].groupby(["direction", "origin", "destination"])['total_value']\
-            .agg({'count', 'sum'})\
-            .rename(columns={'count': 'Cuenta', 'sum':'Valor_acumulado'})\
-            .sort_values(by=['Cuenta'], ascending=False)\
-            .reset_index()
-        Importaciones["Ratio"] = Importaciones["Valor_acumulado"] / Importaciones["Cuenta"]
-        print(Importaciones.head(10))
         print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     #   Medio de transporte utilizado
     if selector == 2:
