@@ -59,11 +59,7 @@ while 1:
             return val[3], val[1]
         def ordRat(val):
             return val[4]
-        def ordDate(val):
-            return val[3][6:], val[3][3:5], val[3][0:3]
-        def ordMes(val):
-            return val[0]
-
+ 
         #   Seleccion de analisis a observar
         print("\nPresione el número de la opción que desee observar.")
         print(" [1] Productos más vendidos y productos rezagados\n", "[2] Productos por reseña en el servicio\n",
